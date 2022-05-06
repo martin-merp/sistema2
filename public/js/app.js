@@ -49906,28 +49906,6 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 //
 //
 //
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
 
 
 /* harmony default export */ __webpack_exports__["default"] = ({
@@ -50077,15 +50055,14 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
         },
         calcularDiferencia: function calcularDiferencia() {
             var diferencia = this.debitos - this.creditos;
-
             return diferencia;
         },
         totalAfects: function totalAfects() {
 
             var totalA = 0;
-            // console.log('aca1 '+this.arrayChecksAfecst);     
+            // console.log('aca1 '+this.arrayChecksAfecst);
             for (var i = 0; i < this.arrayChecksAfecst.length; i++) {
-                //totalA=; 
+                //totalA=;
 
                 if (this.arrayChecksAfecst[i]) {
                     if (this.arrayValsAfecst[i] > this.arrayValsAfecstOrg[i]) {
@@ -50132,10 +50109,8 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
             if (this.credito == '' || this.credito <= 0) this.credito = '0';
         },
         validar_inputs: function validar_inputs(id) {
-
             var me = this;
             var aux_val = $("#input_afect_" + id).val();
-
             var num1 = aux_val;
             var num2 = me.arrayValsAfecstOrg[id];
             //console.log("llegaaa num1="+num1+" num2="+num2+" sssss");
@@ -50153,7 +50128,6 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
             var me = this;
             var url = this.ruta + '/formatos?page=' + page + '&anio=' + me.anio + '&mes=' + me.mes + '&tipo_formato=' + me.tipo_formato_busq + '&criterio=' + me.criterio + '&valor=' + me.valor;
             // console.log(url)   ;
-
             axios.get(url).then(function (response) {
                 //console.log(response.registros.data);
                 var respuesta = response.data;
@@ -50279,7 +50253,6 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
                         $("#credito").val('');
                     }
                     me.tipo = me.arrayCuentas[0]['tipo'];
-
                     //   me.id_tercero_det=me.id_tercero;
                     //   me.tercero_det_aux = me.doc_tercero;
                     if (me.tercero_id2 == '') {
@@ -50288,14 +50261,14 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
                         me.tercero_id2 = '';
                         me.tercero2 = me.tercero;
                         me.tercero_id2 = me.tercero_id;
-                        // var mylist = document.getElementById("tercero_detalle_id");                           
+                        // var mylist = document.getElementById("tercero_detalle_id");
                         // var listitems= mylist.getElementsByClassName("form-control");
                         //var aux1 = $('#tercero_detalle_id').children('input').attr("placeholder", "Type your answer here");
                         //listitems[0].attr("placeholder", "Type your answer here");
                         // var aux11 = $("#tercero_detalle_id").children().children().attr("placeholder", me.aux_nom_y_ced);
                         //$("#tercero_detalle_id").first().append( "<span class='selected-tag'>Luis  Monsalve  - 3839<!----></span>");
                         //aux11.append( "<span class='selected-tag'>Luis  Monsalve  - 3839<!----></span>");
-                        //console.log(aux11[0]);  
+                        //console.log(aux11[0]);
                         /* var url= '/cliente/selectCliente?filtro='+me.doc_tercero;
                          axios.get(url).then(function (response2) {
                              let respuesta2 = response2.data;
@@ -50304,17 +50277,14 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
                              me.loading = true;
                              me.id_tercero_det = me.id_tercero;
                              me.tercero_det_aux = me.doc_tercero;
-                             //selectCliente                        
+                             //selectCliente
                              var mylist = document.getElementById("selectCliente");
                              var listitems2 = mylist.getElementsByClassName("selected-tag");
-                             
                              var mylist = document.getElementById("tercero_detalle_id");
                              var listitems= mylist.getElementsByClassName("form-control");
-                             
-                             
                              var aux_carga_det = listitems2[0].innerHTML.split("<!---->");
                              listitems[0].value = aux_carga_det[0];
-                             //console.log(aux_carga_det[0]);                                                
+                             //console.log(aux_carga_det[0]);
                          })
                          .catch(function (error) {
                              console.log(error);
@@ -50349,7 +50319,6 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
                 if (!me.debito) me.debito = '0';
                 if (!me.credito) me.credito = '0';
                 me.arrayDetalle.push({
-
                     id_cuenta: me.id_cuenta,
                     num_cuenta: me.codigo,
                     debito: me.debito,
@@ -50439,7 +50408,6 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
                 return;
             }
             var me = this;
-
             this.getNumeroNext();
             axios.post(this.ruta + '/formatos/registrar', {
                 'id_tercero': this.tercero_id,
@@ -50603,7 +50571,6 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
         verFormato: function verFormato(id) {
             var me = this;
             me.listado = 2;
-
             //Obtener los datos del ingreso
             var arrayFormatosT = [];
             var url = this.ruta + '/formatos/obtenerCabecera?id=' + id;
@@ -50622,13 +50589,57 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
                 console.log(error);
             });
 
-            //Obtener los datos de los detalles 
+            //Obtener los datos de los detalles
             var urld = this.ruta + '/formatos/obtenerDetalles?id=' + id;
-
             axios.get(urld).then(function (response) {
                 console.log(response);
                 var respuesta = response.data;
                 me.arrayDetalle = respuesta.detalles;
+            }).catch(function (error) {
+                console.log(error);
+            });
+        },
+        copiarFormato: function copiarFormato(id) {
+            var me = this;
+            me.listado = 0;
+            me.editar = 0;
+            //me.registro_id = id;
+            //Obtener los datos del ingreso
+            var arrayFormatosT = [];
+            var url = this.ruta + '/formatos/obtenerCabecera?id=' + id;
+
+            this.getNumeroNext();
+            axios.get(url).then(function (response) {
+                var respuesta = response.data;
+                var AuxFormato = respuesta.formato;
+                //console.log(AuxFormato[0]['formato']);
+                // me.fecha = AuxFormato[0]['fecha'];
+                //me.tercero_id = AuxFormato[0]['id_persona'],
+                //me.tercero_doc = AuxFormato[0]['num_doc'],
+                //me.tercero = AuxFormato[0]['nombre1']+' - '+AuxFormato[0]['apellido1'],
+                me.tipo_formato_new = AuxFormato[0]['formato'], me.subtotal = AuxFormato[0]['subtotal'], me.total = AuxFormato[0]['total'], me.impuesto = AuxFormato[0]['impuesto'], me.debitos = AuxFormato[0]['debes'], me.creditos = AuxFormato[0]['haberes'], me.detalle = AuxFormato[0]['detalle'], me.banco = AuxFormato[0]['banco'], me.forma_pago = AuxFormato[0]['forma_pago'], me.num_cheque = AuxFormato[0]['num_cheque'], me.arrayAfectados = AuxFormato[0]['fecha'],
+                // me.numero = AuxFormato[0]['numero'],
+                me.doc_afecta_long = AuxFormato[0]['doc_afecta_long'], me.cambiar_tipo_f();
+                // me.selectCliente2(me.id_tercero);
+
+                me.id_retencion = AuxFormato[0]['id_retencion'];
+                me.retencion = AuxFormato[0]['retencion'];
+            }).catch(function (error) {
+                console.log(error);
+            });
+
+            //Obtener los datos de los detalles
+            var urld = this.ruta + '/formatos/obtenerDetalles?id=' + id;
+
+            axios.get(urld).then(function (response) {
+                var respuesta = response.data;
+                //console.log(response.data.detalles);
+                me.arrayDetalle = response.data.detalles;
+
+                //campo checked = true en arrayDetalle para que se marque el checkbox en el modulo de retenciones
+                for (var i = 0; i < me.arrayDetalle.length; i++) {
+                    me.arrayDetalle[i].checked = true;
+                }
             }).catch(function (error) {
                 console.log(error);
             });
@@ -50668,7 +50679,6 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
             var url = this.ruta + '/formatos/obtenerCabecera?id=' + id;
 
             this.getNumeroNext();
-
             axios.get(url).then(function (response) {
                 var respuesta = response.data;
                 var AuxFormato = respuesta.formato;
@@ -50686,11 +50696,10 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
                 console.log(error);
             });
 
-            //Obtener los datos de los detalles 
+            //Obtener los datos de los detalles
             var urld = this.ruta + '/formatos/obtenerDetalles?id=' + id;
 
             axios.get(urld).then(function (response) {
-
                 var respuesta = response.data;
                 //console.log(response.data.detalles);
                 me.arrayDetalle = response.data.detalles;
@@ -50760,7 +50769,6 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
                 if (n < 10) {
                     n = '0' + n;
                 }
-
                 me.mes = n;
                 me.valor = '';
                 me.codigo = 0;
@@ -50815,14 +50823,14 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
                 // me.tercero_det_aux = me.num_documento
                 me.tercero2 = me.tercero;
                 me.tercero_id2 = me.tercero_id;
-                // var mylist = document.getElementById("tercero_detalle_id");                           
+                // var mylist = document.getElementById("tercero_detalle_id");
                 // var listitems= mylist.getElementsByClassName("form-control");
                 //var aux1 = $('#tercero_detalle_id').children('input').attr("placeholder", "Type your answer here");
                 //listitems[0].attr("placeholder", "Type your answer here");
                 // var aux11 = $("#tercero_detalle_id").children().children().attr("placeholder", me.aux_nom_y_ced);
                 //$("#tercero_detalle_id").first().append( "<span class='selected-tag'>Luis  Monsalve  - 3839<!----></span>");
                 //aux11.append( "<span class='selected-tag'>Luis  Monsalve  - 3839<!----></span>");
-                //console.log(aux11[0]);  
+                //console.log(aux11[0]);
                 /* var url= '/cliente/selectCliente?filtro='+me.doc_tercero;
                 axios.get(url).then(function (response2) {
                     let respuesta2 = response2.data;
@@ -50831,17 +50839,14 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
                     me.loading = true;
                     me.id_tercero_det = me.id_tercero;
                     me.tercero_det_aux = me.doc_tercero;
-                    //selectCliente                        
+                    //selectCliente
                     var mylist = document.getElementById("selectCliente");
                     var listitems2 = mylist.getElementsByClassName("selected-tag");
-                    
                     var mylist = document.getElementById("tercero_detalle_id");
                     var listitems= mylist.getElementsByClassName("form-control");
-                    
-                    
                     var aux_carga_det = listitems2[0].innerHTML.split("<!---->");
                     listitems[0].value = aux_carga_det[0];
-                    //console.log(aux_carga_det[0]);                                                
+                    //console.log(aux_carga_det[0]);
                 })
                 .catch(function (error) {
                     console.log(error);
@@ -50872,7 +50877,6 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
         this.tipo_cta = '';
         this.cta_busq = '';
     }), _defineProperty(_methods, 'cambiar_tipo_f', function cambiar_tipo_f() {
-
         var me = this;
         if (me.tipo_formato_new != '') {
             var url = this.ruta + '/conf_formatos/get_filt_tipo?id_formato=' + me.tipo_formato_new;
@@ -50916,7 +50920,7 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
                 aux_saldo = 0; //id_cuenta
 
                 aux_saldo = parseFloat(me.arrayValsAfecstOrg[i]) - parseFloat(me.arrayValsAfecst[i]);
-                //console.log('aux_saldo='+aux_saldo);                    
+                //console.log('aux_saldo='+aux_saldo);
                 me.arrayDetalle.push({ credito: 0, debito: me.arrayValsAfecst[i], doc_afecta_long: me.arrayAfectadosBusqData[i].numero, doc_externo: me.arrayAfectadosBusqData[i].doc_externo, id_tercero: me.arrayAfectadosBusqData[i].tercero, id_cuenta: me.arrayAfectadosBusqData[i].cuenta, doc_tercero: me.doc_tercero, num_cuenta: me.arrayAfectadosBusqData[i].num_cuenta, saldo_cuent: aux_saldo, id_afectado: me.arrayAfectadosBusqData[i].id_afectado });
             }
         }
@@ -50933,9 +50937,7 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
         me.arrayAfectadosBusq = [];
 
         var url = this.ruta + '/cuentas/get_x_afectar?id_tercero=' + me.tercero_id;
-
         var resultado = [];
-
         axios.get(url).then(function (response) {
             //arrayAfectadosBusq
             var respuesta = response.data;
@@ -50943,9 +50945,7 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
             // console.log(resultado);
             resultado;
             me.arrayAfectadosBusq = resultado;
-
             var id_datos_aux = '';
-
             resultado.forEach(function (datos) {
                 //console.log(datos.id_cuenta);
                 id_datos_aux = datos.id_afectado;
@@ -51842,7 +51842,7 @@ var render = function() {
                                       ])
                                     : _c("td", [
                                         _vm._v(
-                                          " \n                                        " +
+                                          "\n                                        " +
                                             _vm._s(
                                               registro.nombre1 +
                                                 " " +
@@ -52157,7 +52157,31 @@ var render = function() {
                                                   ]
                                                 )
                                           ]
-                                        : _vm._e()
+                                        : _vm._e(),
+                                      _vm._v(" "),
+                                      [
+                                        _c(
+                                          "button",
+                                          {
+                                            staticClass:
+                                              "btn btn-secondary btn-sm",
+                                            attrs: {
+                                              type: "button",
+                                              title: "Duplicar Formato"
+                                            },
+                                            on: {
+                                              click: function($event) {
+                                                _vm.copiarFormato(registro.id)
+                                              }
+                                            }
+                                          },
+                                          [
+                                            _c("i", {
+                                              staticClass: "icon-docs"
+                                            })
+                                          ]
+                                        )
+                                      ]
                                     ],
                                     2
                                   )

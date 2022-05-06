@@ -381,5 +381,5 @@ class FormatoController extends Controller
         //return $pdf->download('formato-'.$numformato[0]->numero.'.pdf');
 
 
-    }*/
+    }
 }
